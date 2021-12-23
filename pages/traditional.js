@@ -4,9 +4,10 @@ import axios from "axios";
 const Traditional = () => {
   const [currentValue, setCurrentValue] = useState([{}]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:4000/superheroes")
+      .get("http://localhost:4000/superheroess")
       .then(function (response) {
         // handle success
         // const names = response.data.name;
@@ -15,6 +16,8 @@ const Traditional = () => {
       })
       .catch(function (error) {
         // handle error
+        setError(error.message);
+        setIsLoading(false);
         console.log(error);
       })
       .then(function () {
@@ -24,6 +27,7 @@ const Traditional = () => {
 
   return (
     <div>
+      {error && <div>{error}</div>}
       {isLoading && <div>Loading....</div>}
       {currentValue.map((user) => {
         return <div key={user.id}>{user.name}</div>;
