@@ -1,7 +1,7 @@
 import React from "react";
 
-const TraditionalSuperHeroes = () => {
+const Traditional = () => {
   return <div>Traditional Super Heroes</div>;
 };
 
-export default TraditionalSuperHeroes;
+export default Traditional;

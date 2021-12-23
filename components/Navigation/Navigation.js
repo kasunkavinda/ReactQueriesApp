@@ -1,28 +1,25 @@
-import React from "react";
 import Link from "next/link";
-
-const Navigation = () => {
+import classes from "./Navigation.module.css";
+function Navigation() {
   return (
-    <div>
-      <ul>
-        <li>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/traditional-super-heroes">
-            <a>TraditionalSuperHeroes</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/rq-super-heroes">
-            <a>RQSuperHeroes</a>
-          </Link>
-        </li>
-      </ul>
-    </div>
+    <header>
+      <nav className={classes.nav}>
+        <ul className={classes.navul}>
+          <li className="my-3">
+            <Link href="/">
+              <a className="text-white">Kasun Kavinda</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/traditional">Traditional Super Heroes</Link>
+          </li>
+          <li>
+            <Link href="/rq">RQ Super Heroes</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
-};
+}
 
 export default Navigation;
