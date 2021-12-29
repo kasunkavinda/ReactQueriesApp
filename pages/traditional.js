@@ -7,7 +7,7 @@ const Traditional = () => {
   const [error, setError] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:4000/superheroess")
+      .get("http://localhost:4000/superheroes")
       .then(function (response) {
         // handle success
         // const names = response.data.name;
